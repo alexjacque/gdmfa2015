@@ -211,21 +211,36 @@ nav#historicNav a:active {
 	display: block;
 	width: 600px;
 	text-align: center;
-	margin: 100px auto 0 auto;
+	margin: 107px auto 0 auto;
 	font-size: 13px;
+	
+	opacity: 0;
+	-webkit-transition: all .4s;
+	-webkit-transition-delay: .5s; /* Chrome, Safari, Opera */
+	transition: all .4s;
+	transition-delay: .5s;
 }
+.studentInfoOverlay.isOpen .studentInfo {
+	opacity: 1;
+	margin-top: 100px;
+}
+
 .studentAvatar {
 	width: 125px;
 	height: 125px;
 	border-radius: 125px;
 }
-.studentName { font-size: 3em; margin-bottom: 10px; }
-.studentMeta { margin-bottom: 50px; color: #ccc; }
+.studentName {
+	font-size: 3em;
+	margin-bottom: 10px;
+ }
+ 
+.studentMeta { margin-bottom: 30px; color: #ccc; }
 
 .studentMeta a:link, .studentMeta a:visited { font-weight: 700; }
 .studentMeta a:hover, .studentMeta a:active {  }
 
-.projectName { font-size: 2em; }
+.projectName { font-size: 2em; margin-bottom: .5em; }
 .projectDescription { text-align: left; }
 
 
@@ -271,7 +286,7 @@ nav#historicNav a:active {
 #shiva a:link, #shiva a:visited { color: #f67fc5; }
 #shiva a:hover, #shiva a:active { color: #222; }
 
-#iris a:link, #iris a:visited { color: #f67fc5; }
+#iris a:link, #iris a:visited { color: #FF3131; }
 #iris a:hover, #iris a:active { color: #222; }
 
 #lolo a:link, #lolo a:visited { color: #f67fc5; }
