@@ -1,0 +1,377 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+figure { margin: 0; }
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+body {
+	background-color: #fafafa;
+    font: 16px/26px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	color: #222222;
+	font-family: 'Merriweather', Georgia, Times, serif;
+	font-weight: 900;
+}
+
+a:link, a:visited { text-decoration: underline; transition: all .2s; }
+a:hover, a:active { text-decoration: none; }
+
+.container {
+	position: relative;
+	width: 745px;
+	margin: 0 auto 0 auto;
+}
+.main-container {
+	position: relative;
+	width: 100%;
+	margin-left: -10px;
+	margin-right: -10px;
+}
+
+.intro { 
+	margin: 20px auto 30px auto;
+	font-style: italic;
+	color: #888;
+	font-size: 15px;
+}
+h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
+
+
+/*
+	***
+	Navigation
+	***
+*/
+
+#historicNavContainer {
+	height: 30px;
+	background-color: #fff;
+}
+nav#historicNav {
+	font-size: 13px;
+}
+nav#historicNav ul { list-style-type: none; margin: 0; padding: 0; }
+nav#historicNav ul li {
+	float: left;
+	padding: 0;
+	margin: 0 15px 0 0;
+}
+
+nav#historicNav li.main { font-weight: 700; }
+
+nav#historicNav a:link,
+nav#historicNav a:visited {
+	color: #ccc;
+}
+nav#historicNav a:hover,
+nav#historicNav a:active {
+	color: #888;
+}
+
+
+/*
+	***
+	Students Overview
+	***
+*/
+
+.student {
+	display: inline-block;
+	position: relative;
+	width: 125px;
+	min-height: 175px;
+	margin: 0 10px 0px 10px;
+	vertical-align: top;
+}
+.student figure:hover { cursor: pointer; }
+.student figure img {
+	display: block;
+	position: relative;
+	width: 125px;
+	height: 125px;
+	margin: 0 auto 5px auto;
+	border-radius: 125px;
+}
+.student figure figcaption {
+	display: block;
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 16px;
+	color: #ccc;
+	transition: all .2s;
+}
+.student:hover figcaption { color: #222; }
+
+/*
+	***
+	Student Info Overlay
+	***
+*/
+
+.studentInfoOverlay {
+	display: block;
+	position: fixed;
+	min-height: 100%;
+	min-width: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	overflow: scroll;
+	background-color: #fafafa;
+	opacity: 0;
+	visibility: hidden;
+	z-index: 1000;
+	
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+.studentInfoOverlay.isOpen {
+	min-width: 100%;
+	min-height: 100%;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 1;
+	visibility: visible;
+	
+	-webkit-transition: all .4s ease-in-out;
+	transition: all .4s ease-in-out;
+}
+
+.studentInfoOverlay .close {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+.studentInfo {
+	display: block;
+	width: 600px;
+	text-align: center;
+	margin: 100px auto 0 auto;
+	font-size: 13px;
+}
+.studentAvatar {
+	width: 125px;
+	height: 125px;
+	border-radius: 125px;
+}
+.studentName { font-size: 3em; margin-bottom: 10px; }
+.studentMeta { margin-bottom: 50px; color: #ccc; }
+
+.studentMeta a:link, .studentMeta a:visited { font-weight: 700; }
+.studentMeta a:hover, .studentMeta a:active {  }
+
+.projectName { font-size: 2em; }
+.projectDescription { text-align: left; }
+
+
+/*
+	***
+	Student Colors
+	***
+*/
+
+#amanda a:link, #amanda a:visited { color: #f67fc5; }
+#amanda a:hover, #amanda a:active { color: #222; }
+
+#michael a:link, #michael a:visited { color: #f67fc5; }
+#michael a:hover, #michael a:active { color: #222; }
+
+#chenyu a:link, #chenyu a:visited { color: #f67fc5; }
+#chenyu a:hover, #chenyu a:active { color: #222; }
+
+#nate a:link, #nate a:visited { color: #f67fc5; }
+#nate a:hover, #nate a:active { color: #222; }
+
+#alex a:link, #alex a:visited { color: #35c9d0; }
+#alex a:hover, #alex a:active { color: #222; }
+
+#katrina a:link, #katrina a:visited { color: #f67fc5; }
+#katrina a:hover, #katrina a:active { color: #222; }
+
+#daniel a:link, #daniel a:visited { color: #f67fc5; }
+#daniel a:hover, #daniel a:active { color: #222; }
+
+#winnie a:link, #winnie a:visited { color: #f67fc5; }
+#winnie a:hover, #winnie a:active { color: #222; }
+
+#wenjie a:link, #wenjie a:visited { color: #f67fc5; }
+#wenjie a:hover, #wenjie a:active { color: #222; }
+
+#louis a:link, #louis a:visited { color: #f67fc5; }
+#louis a:hover, #louis a:active { color: #222; }
+
+#sally a:link, #sally a:visited { color: #f67fc5; }
+#sally a:hover, #sally a:active { color: #222; }
+
+#shiva a:link, #shiva a:visited { color: #f67fc5; }
+#shiva a:hover, #shiva a:active { color: #222; }
+
+#iris a:link, #iris a:visited { color: #f67fc5; }
+#iris a:hover, #iris a:active { color: #222; }
+
+#lolo a:link, #lolo a:visited { color: #f67fc5; }
+#lolo a:hover, #lolo a:active { color: #222; }
+
+
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 1140px) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
