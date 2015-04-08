@@ -195,9 +195,18 @@ nav#historicNav a:active {
 .studentInfoOverlay .close {
 	display: block;
 	position: fixed;
-	top: 0;
-	right: 0;
+	top: 30px;
+	right: 30px;
+	height: 30px;
+	width: 30px;
+	text-indent: -10000px;
+	background: url(../img/close.svg) center center no-repeat;
+	cursor: pointer;
+	
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
 }
+.studentInfoOverlay .close:hover { opacity: .5; }
 .studentInfo {
 	display: block;
 	width: 600px;

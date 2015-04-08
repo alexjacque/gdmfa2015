@@ -3,13 +3,32 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Alex Jacque -- Designer / Developer -- @alexjacque
 
 # THANKS
 
-    <name>
+    Ellen Lupton - Director
+	Jennier Cole Phillips - Director
+	
+	Amanda Buck
+	Daniel Khang
+	Haoqian "Lolo" Zhang
+	Iris Sprague
+	Katrina Keane
+	Michael Bonfiglio
+	Nate Gulledge
+	Sally Maier
+	Shiva Nallaperumal
+	Wenjie Lu
+	Winnie Kuo
+	Yu Chen
+	Yushi "Louis" Luo
 
 # TECHNOLOGY COLOPHON
 
-    HTML5, CSS3
-    jQuery, Modernizr
+    HTML5
+	CSS3
+	SVG
+	Google Fonts
+    jQuery
+	Modernizr
