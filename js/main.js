@@ -1,20 +1,31 @@
-$( window ).load(function () {
-	
-});
-
 $( document ).ready(function() {
 	
 	checkDirectLink();
 	
-	$(".student figure").click(function() {
-		$(this).parent().find(".studentInfoOverlay").addClass("isOpen");
-		var id = $(this).parent().attr('id');
-		window.location.hash = id;
+	$(".student figure").click(function(e) {
+		$("body").addClass("modal-open"); // add class to help prevent scrolling when overlay is open
+		
+		// helpful SO post: http://stackoverflow.com/a/1489802
+		var id = $(this).parent().attr('id'); // id of elment we're requesting the overlay for
+		var node = $('#' + id); // get element with id = to our hash
+		if (node.length) { // if the node actually exists
+			node.attr('id',''); // remove the id temporarily to prevent anchor jumping
+		}
+		document.location.hash = id; // set our document hash
+		if (node.length) { // again, if the node actually exists
+			node.attr('id',id); // add our hash id back to the original node
+		}
+		
+		$(this).parent().find(".studentInfoOverlay").addClass("isOpen"); // add class to overlay
 	});
 	
-	$(".close").click(function() {
-		$(this).parent().removeClass("isOpen");
-		window.location.hash = ''; // cannot remove #
+	$(".close").click(function(e) {
+		$("body").removeClass("modal-open"); // remove class to resume scrolling
+		
+		var scr = document.body.scrollTop; // get current distance of scroll from top 
+		$(this).parent().removeClass("isOpen"); // remove class from overlay
+		removeHash();
+		document.body.scrollTop = scr; // scroll back to that position
 	});
 	
 });
@@ -27,6 +38,24 @@ function checkDirectLink() {
 		
 		$(div).find(".studentInfoOverlay").addClass("isOpen"); // add isOpen class
 	}
+}
+
+// from another helpful SO answer: http://stackoverflow.com/a/5298684
+function removeHash () { 
+    var scrollV, scrollH, loc = window.location;
+    if ("pushState" in history)
+        history.pushState("", document.title, loc.pathname + loc.search);
+    else {
+        // Prevent scrolling by storing the page's current scroll offset
+        scrollV = document.body.scrollTop;
+        scrollH = document.body.scrollLeft;
+
+        loc.hash = "";
+
+        // Restore the scroll offset, should be flicker free
+        document.body.scrollTop = scrollV;
+        document.body.scrollLeft = scrollH;
+    }
 }
 
 // function to switch all images with project thumbnails
