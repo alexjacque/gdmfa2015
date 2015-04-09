@@ -2,6 +2,12 @@ $( document ).ready(function() {
 	
 	checkDirectLink();
 	
+	$(".student").hover(function(e) {
+		hideNames($(this));	
+	}, function(e) {
+		restoreNames();	
+	});
+	
 	$(".student figure").click(function(e) {
 		$("body").addClass("modal-open"); // add class to help prevent scrolling when overlay is open
 		
@@ -41,7 +47,7 @@ function checkDirectLink() {
 }
 
 // from another helpful SO answer: http://stackoverflow.com/a/5298684
-function removeHash () { 
+function removeHash() { 
     var scrollV, scrollH, loc = window.location;
     if ("pushState" in history)
         history.pushState("", document.title, loc.pathname + loc.search);
@@ -56,6 +62,27 @@ function removeHash () {
         document.body.scrollTop = scrollV;
         document.body.scrollLeft = scrollH;
     }
+}
+
+// function to fade all student names on hover
+function hideNames(exception) {
+	
+	// get all .student>figure>figcaption elements
+	// remove the current hovered element figcaption
+	// set all to 0 opacity
+	
+	$(".student").not(exception).find("figcaption").stop().animate({opacity: 0}, 200);
+	
+}
+
+// function to restore all student names on mouse out
+function restoreNames() {
+	
+	// get all .student>figure>figcaption elements
+	// set all to 1 opacity
+	
+	$(".student").find("figcaption").stop().animate({opacity: 1}, 200);
+	
 }
 
 // function to switch all images with project thumbnails
