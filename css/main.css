@@ -53,10 +53,27 @@ textarea {
     padding: 0.2em 0;
 }
 
+
+
+@media only screen and (min-width: 480px) {
+	.container { width: 450px; }
+}
+
+@media only screen and (min-width: 768px) {
+	.container { width: 595px; }
+}
+
+@media only screen and (min-width: 1140px) {
+	.container { width: 745px; }
+}
+
+
 body {
 	background-color: #fafafa;
     font: 16px/26px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+body.modal-open { overflow: hidden; }
 
 h1,h2,h3,h4,h5,h6 {
 	color: #222222;
@@ -69,7 +86,6 @@ a:hover, a:active { text-decoration: none; }
 
 .container {
 	position: relative;
-	width: 745px;
 	margin: 0 auto 0 auto;
 }
 .main-container {
@@ -167,8 +183,9 @@ nav#historicNav a:active {
 	min-height: 100%;
 	min-width: 100%;
 	top: 0;
-	left: 0;
 	right: 0;
+	bottom: 0;
+	left: 0;
 	overflow: scroll;
 	background-color: #fafafa;
 	opacity: 0;
@@ -182,9 +199,9 @@ nav#historicNav a:active {
 	min-width: 100%;
 	min-height: 100%;
 	top: 0;
-	left: 0;
-	bottom: 0;
 	right: 0;
+	bottom: 0;
+	left: 0;
 	opacity: 1;
 	visibility: visible;
 	
@@ -223,6 +240,18 @@ nav#historicNav a:active {
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
 	margin-top: 100px;
+}
+
+@media only screen and (min-width: 480px) {
+	.studentInfo { width: 450px; }
+}
+
+@media only screen and (min-width: 768px) {
+	.studentInfo { width: 600px; }
+}
+
+@media only screen and (min-width: 1140px) {
+	
 }
 
 .studentAvatar {
@@ -283,7 +312,7 @@ nav#historicNav a:active {
 #sally a:link, #sally a:visited { color: #f67fc5; }
 #sally a:hover, #sally a:active { color: #222; }
 
-#shiva a:link, #shiva a:visited { color: #f67fc5; }
+#shiva a:link, #shiva a:visited { color: #FF3131; }
 #shiva a:hover, #shiva a:active { color: #222; }
 
 #iris a:link, #iris a:visited { color: #FF3131; }
@@ -292,19 +321,6 @@ nav#historicNav a:active {
 #lolo a:link, #lolo a:visited { color: #f67fc5; }
 #lolo a:hover, #lolo a:active { color: #222; }
 
-
-
-@media only screen and (min-width: 480px) {
-
-}
-
-@media only screen and (min-width: 768px) {
-
-}
-
-@media only screen and (min-width: 1140px) {
-
-}
 
 /* ==========================================================================
    Helper classes
