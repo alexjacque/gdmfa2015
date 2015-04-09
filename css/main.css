@@ -232,9 +232,9 @@ nav#historicNav a:active {
 	font-size: 13px;
 	
 	opacity: 0;
-	-webkit-transition: all .4s;
+	-webkit-transition: opacity .4s, margin .4s;
 	-webkit-transition-delay: .5s; /* Chrome, Safari, Opera */
-	transition: all .4s;
+	transition: opacity .4s, margin .4s;
 	transition-delay: .5s;
 }
 .studentInfoOverlay.isOpen .studentInfo {
@@ -255,9 +255,9 @@ nav#historicNav a:active {
 }
 
 .studentAvatar {
-	width: 125px;
-	height: 125px;
-	border-radius: 125px;
+	width: 150px;
+	height: 150px;
+	border-radius: 150px;
 }
 .studentName {
 	font-size: 3em;
@@ -279,7 +279,7 @@ nav#historicNav a:active {
 	***
 */
 
-#amanda a:link, #amanda a:visited { color: #f67fc5; }
+#amanda a:link, #amanda a:visited { color: #ed135a; }
 #amanda a:hover, #amanda a:active { color: #222; }
 
 #michael a:link, #michael a:visited { color: #f67fc5; }
