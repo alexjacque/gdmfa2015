@@ -11,6 +11,7 @@ $( document ).ready(function() {
 	});
 	
 	$(".student figure").click(function(e) {
+		$("html").css("overflow","hidden");
 		$("body").addClass("modal-open"); // add class to help prevent scrolling when overlay is open
 		
 		// helpful SO post: http://stackoverflow.com/a/1489802
@@ -28,7 +29,9 @@ $( document ).ready(function() {
 	});
 	
 	$(".close").click(function(e) {
+		$("html").css("overflow","scroll");
 		$("body").removeClass("modal-open"); // remove class to resume scrolling
+		restoreNames(); // because on mobile names stay gone for whatever reason
 		
 		var scr = document.body.scrollTop; // get current distance of scroll from top 
 		$(this).parent().removeClass("isOpen"); // remove class from overlay
@@ -44,6 +47,7 @@ function checkDirectLink() {
 	if (hash.length > 1) {
 		var div = document.getElementById(hash.slice(1));
 		
+		$("body").addClass("modal-open"); // add class to help prevent scrolling when overlay is open
 		$(div).find(".studentInfoOverlay").addClass("isOpen"); // add isOpen class
 	}
 }
