@@ -196,8 +196,6 @@ nav#historicNav a:active {
 	transition: all .2s ease-in-out;
 }
 .studentInfoOverlay.isOpen {
-	min-width: 100%;
-	min-height: 100%;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -320,6 +318,39 @@ nav#historicNav a:active {
 
 #lolo a:link, #lolo a:visited { color: #f67fc5; }
 #lolo a:hover, #lolo a:active { color: #222; }
+
+
+/*
+	STUDENT BG IMAGES
+*/
+
+.bg {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center center;
+	opacity: .05;
+	z-index: -1000;
+}
+
+#amanda .bg { background-image: url('../img/bg/amanda.jpg'); }
+#michael .bg { background-image: url('../img/bg/michael.jpg'); }
+#chenyu .bg { background-image: url('../img/bg/chenyu.jpg'); }
+#nate .bg { background-image: url('../img/bg/nate.jpg'); }
+#alex .bg { background-image: url('../img/bg/alex.jpg'); }
+#katrina .bg { background-image: url('../img/bg/katrina.jpg'); }
+#daniel .bg { background-image: url('../img/bg/daniel.jpg'); }
+#winnie .bg { background-image: url('../img/bg/winnie.jpg'); }
+#wenjie .bg { background-image: url('../img/bg/wenjie.jpg'); }
+#louis .bg { background-image: url('../img/bg/louis.jpg'); }
+#sally .bg { background-image: url('../img/bg/sally.jpg'); }
+#shiva .bg { background-image: url('../img/bg/shiva.jpg'); }
+#iris .bg { background-image: url('../img/bg/iris.jpg'); }
+#lolo .bg { background-image: url('../img/bg/lolo.jpg'); }
 
 
 /* ==========================================================================
