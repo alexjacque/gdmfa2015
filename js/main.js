@@ -4,8 +4,10 @@ $( document ).ready(function() {
 	
 	$(".student").hover(function(e) {
 		hideNames($(this));	
+		// show student thumbnails
 	}, function(e) {
-		restoreNames();	
+		restoreNames();
+		// remove student thumbnails
 	});
 	
 	$(".student figure").click(function(e) {
@@ -64,7 +66,7 @@ function removeHash() {
     }
 }
 
-// function to fade all student names on hover
+// fade all student names on hover
 function hideNames(exception) {
 	
 	// get all .student>figure>figcaption elements
@@ -75,7 +77,7 @@ function hideNames(exception) {
 	
 }
 
-// function to restore all student names on mouse out
+// restore all student names on mouse out
 function restoreNames() {
 	
 	// get all .student>figure>figcaption elements
@@ -85,4 +87,4 @@ function restoreNames() {
 	
 }
 
-// function to switch all images with project thumbnails
+// switch/overlay all profile images with project thumbnails
