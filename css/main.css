@@ -4,6 +4,11 @@ html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+	
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 ::-moz-selection {
@@ -55,25 +60,21 @@ textarea {
 
 
 
-@media only screen and (min-width: 480px) {
-	.container { width: 450px; }
-}
-
-@media only screen and (min-width: 768px) {
-	.container { width: 595px; }
-}
-
-@media only screen and (min-width: 1140px) {
-	.container { width: 745px; }
-}
 
 
 body {
 	background-color: #fafafa;
     font: 16px/26px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+	box-sizing: border-box;
+	margin: 0;
+	min-height: 100%;
 }
 
-body.modal-open { overflow: hidden; }
+#cocoon { height: 100%; width: 100%; position: relative; }
+
+body.modal-open { overflow: hidden; position: relative; }
+body.modal-open #cocoon { overflow: hidden; position: relative; }
 
 h1,h2,h3,h4,h5,h6 {
 	color: #222222;
@@ -85,9 +86,23 @@ a:link, a:visited { text-decoration: underline; transition: all .2s; }
 a:hover, a:active { text-decoration: none; }
 
 .container {
+	width: 350px;
 	position: relative;
 	margin: 0 auto 0 auto;
 }
+
+@media only screen and (min-width: 430px) {
+	.container { width: 450px; }
+}
+
+@media only screen and (min-width: 768px) {
+	.container { width: 595px; }
+}
+
+@media only screen and (min-width: 1140px) {
+	.container { width: 745px; }
+}
+
 .main-container {
 	position: relative;
 	width: 100%;
@@ -143,25 +158,23 @@ nav#historicNav a:active {
 */
 
 .student {
-	display: inline-block;
+	display: block;
 	position: relative;
-	width: 125px;
-	min-height: 175px;
-	margin: 0 10px 0px 10px;
+	width: 80%;
+	margin: 0 auto 10px auto;
 	vertical-align: top;
 }
 .student figure:hover { cursor: pointer; }
 .student figure img {
-	display: block;
+	display: inline-block;
 	position: relative;
-	width: 125px;
-	height: 125px;
+	width: 75px;
+	height: 75px;
 	margin: 0 auto 5px auto;
-	border-radius: 125px;
+	border-radius: 75px;
 }
 .student figure figcaption {
-	display: block;
-	width: 100%;
+	display: inline-block;
 	text-align: center;
 	font-size: 13px;
 	font-weight: 600;
@@ -224,7 +237,7 @@ nav#historicNav a:active {
 .studentInfoOverlay .close:hover { opacity: .5; }
 .studentInfo {
 	display: block;
-	width: 600px;
+	width: 300px;
 	text-align: center;
 	margin: 107px auto 0 auto;
 	font-size: 13px;
@@ -237,29 +250,17 @@ nav#historicNav a:active {
 }
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
-	margin-top: 100px;
-}
-
-@media only screen and (min-width: 480px) {
-	.studentInfo { width: 450px; }
-}
-
-@media only screen and (min-width: 768px) {
-	.studentInfo { width: 600px; }
-}
-
-@media only screen and (min-width: 1140px) {
-	
+	margin-top: 50px;
 }
 
 .studentAvatar {
-	width: 150px;
-	height: 150px;
-	border-radius: 150px;
+	width: 100px;
+	height: 100px;
+	border-radius: 100px;
 }
 .studentName {
-	font-size: 3em;
-	margin-bottom: 10px;
+	font-size: 2em;
+	margin-bottom: 5px;
  }
  
 .studentMeta { margin-bottom: 30px; color: #ccc; }
@@ -267,9 +268,61 @@ nav#historicNav a:active {
 .studentMeta a:link, .studentMeta a:visited { font-weight: 700; }
 .studentMeta a:hover, .studentMeta a:active {  }
 
-.projectName { font-size: 2em; margin-bottom: .5em; }
+.projectName { font-size: 1.5em; margin-bottom: .5em; }
 .projectDescription { text-align: left; }
 
+
+@media only screen and (min-width: 480px) {
+	.student {
+		display: inline-block;
+		position: relative;
+		width: 125px;
+		min-height: 175px;
+		margin: 0 10px 0px 10px;
+	}
+	.student figure img {
+		display: block;
+		position: relative;
+		width: 125px;
+		height: 125px;
+		margin: 0 auto 5px auto;
+		border-radius: 125px;
+	}
+	.student figure figcaption {
+		display: block;
+		width: 100%;
+		text-align: center;
+		font-size: 13px;
+		font-weight: 600;
+		line-height: 16px;
+		color: #ccc;
+		transition: all .2s;
+	}
+	.studentInfo { width: 450px; }
+}
+
+@media only screen and (min-width: 768px) {
+	.student { 
+		display: inline-block;
+		margin: 0 10px 0px 10px;
+	}
+	.studentInfo { width: 600px; }
+	.studentInfoOverlay.isOpen .studentInfo {
+		opacity: 1;
+		margin-top: 100px;
+	}
+	.studentAvatar {
+		width: 150px;
+		height: 150px;
+		border-radius: 150px;
+	}
+	.studentName { font-size: 3em; margin-bottom: 10px; }
+	.projectName { font-size: 2em; margin-bottom: .5em; }
+}
+
+@media only screen and (min-width: 1140px) {
+	
+}
 
 /*
 	***
