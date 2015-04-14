@@ -3,10 +3,11 @@ $( document ).ready(function() {
 	checkDirectLink();
 	
 	$(".student").hover(function(e) {
-		hideNames($(this));	
+		changeNameToProjectTitle($(this)); // change student name to project title
+		hideNames($(this)); // hide all other names
 		// show student thumbnails
 	}, function(e) {
-		restoreNames();
+		restoreNames($(this));
 		// remove student thumbnails
 	});
 	
@@ -82,13 +83,32 @@ function hideNames(exception) {
 }
 
 // restore all student names on mouse out
-function restoreNames() {
+function restoreNames(student) {
 	
 	// get all .student>figure>figcaption elements
 	// set all to 1 opacity
 	
 	$(".student").find("figcaption").stop().animate({opacity: 1}, 200);
 	
+	// if we're hovering off of a particular student
+	if (student) {
+		var studentName = student[0].getAttribute('data-name');
+		student.find('figcaption')[0].innerHTML = studentName;
+	}
+	
+}
+
+function changeNameToProjectTitle(student) {
+	// get specific element (figcaption)
+	// theObject.getAttribute("data-project")
+	// set innerHTML
+	var projectName = student[0].getAttribute('data-project');
+	student.find('figcaption')[0].innerHTML = projectName;
 }
 
 // switch/overlay all profile images with project thumbnails
+
+// create array of all id -> imageURL pairs on initial load
+// replace all figure -> img srcs with other? images
+
+// on mouse out, restore img srcs from array of id -> imageURL pairs

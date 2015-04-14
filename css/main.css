@@ -78,7 +78,7 @@ body.modal-open #cocoon { overflow: hidden; position: relative; }
 
 h1,h2,h3,h4,h5,h6 {
 	color: #222222;
-	font-family: 'Merriweather', Georgia, Times, serif;
+	font-family: 'Playfair Display', 'Merriweather', Georgia, Times, serif;
 	font-weight: 900;
 }
 
@@ -126,15 +126,15 @@ h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
 */
 
 #historicNavContainer {
-	height: 30px;
+	min-height: 30px;
 	background-color: #fff;
 }
 nav#historicNav {
 	font-size: 13px;
 }
-nav#historicNav ul { list-style-type: none; margin: 0; padding: 0; }
+nav#historicNav ul { list-style-type: none; margin: 0; padding: 0; min-height: 100%; }
 nav#historicNav ul li {
-	float: left;
+	display: inline-block;
 	padding: 0;
 	margin: 0 15px 0 0;
 }
@@ -176,10 +176,12 @@ nav#historicNav a:active {
 .student figure figcaption {
 	display: inline-block;
 	text-align: center;
-	font-size: 13px;
+	width: auto;
+	margin-left: .5em;
 	font-weight: 600;
-	line-height: 16px;
 	color: #ccc;
+	font-size: 18px;
+	line-height: 16px;
 	transition: all .2s;
 }
 .student:hover figcaption { color: #222; }
@@ -239,7 +241,7 @@ nav#historicNav a:active {
 	display: block;
 	width: 300px;
 	text-align: center;
-	margin: 107px auto 0 auto;
+	margin: 57px auto 0 auto;
 	font-size: 13px;
 	
 	opacity: 0;
@@ -289,16 +291,19 @@ nav#historicNav a:active {
 		border-radius: 125px;
 	}
 	.student figure figcaption {
-		display: block;
-		width: 100%;
+		display: inline-block;
 		text-align: center;
-		font-size: 13px;
+		width: 100%;
+		margin-left: 0;
 		font-weight: 600;
-		line-height: 16px;
 		color: #ccc;
+		font-size: 13px;
+		line-height: 16px;
 		transition: all .2s;
 	}
-	.studentInfo { width: 450px; }
+	.studentInfo {
+		width: 450px;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -306,7 +311,10 @@ nav#historicNav a:active {
 		display: inline-block;
 		margin: 0 10px 0px 10px;
 	}
-	.studentInfo { width: 600px; }
+	.studentInfo {
+		width: 600px;
+		margin-top: 107px;
+	}
 	.studentInfoOverlay.isOpen .studentInfo {
 		opacity: 1;
 		margin-top: 100px;
@@ -339,7 +347,7 @@ nav#historicNav a:active {
 #chenyu a:link, #chenyu a:visited { color: #f67fc5; }
 #chenyu a:hover, #chenyu a:active { color: #222; }
 
-#nate a:link, #nate a:visited { color: #f67fc5; }
+#nate a:link, #nate a:visited { color: #587373; }
 #nate a:hover, #nate a:active { color: #222; }
 
 #alex a:link, #alex a:visited { color: #35c9d0; }
@@ -348,7 +356,7 @@ nav#historicNav a:active {
 #katrina a:link, #katrina a:visited { color: #f67fc5; }
 #katrina a:hover, #katrina a:active { color: #222; }
 
-#daniel a:link, #daniel a:visited { color: #f67fc5; }
+#daniel a:link, #daniel a:visited { color: #4FF1B8; }
 #daniel a:hover, #daniel a:active { color: #222; }
 
 #winnie a:link, #winnie a:visited { color: #f67fc5; }
@@ -357,7 +365,7 @@ nav#historicNav a:active {
 #wenjie a:link, #wenjie a:visited { color: #f67fc5; }
 #wenjie a:hover, #wenjie a:active { color: #222; }
 
-#louis a:link, #louis a:visited { color: #f67fc5; }
+#louis a:link, #louis a:visited { color: #e5004e; }
 #louis a:hover, #louis a:active { color: #222; }
 
 #sally a:link, #sally a:visited { color: #f67fc5; }
