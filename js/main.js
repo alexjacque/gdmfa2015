@@ -5,9 +5,11 @@ $( document ).ready(function() {
 	$(".student").hover(function(e) {
 		changeNameToProjectTitle($(this)); // change student name to project title
 		hideNames($(this)); // hide all other names
+		switchImageSource($(this));
 		// show student thumbnails
 	}, function(e) {
 		restoreNames($(this));
+		switchImageSource($(this));
 		// remove student thumbnails
 	});
 	
@@ -104,6 +106,23 @@ function changeNameToProjectTitle(student) {
 	// set innerHTML
 	var projectName = student[0].getAttribute('data-project');
 	student.find('figcaption')[0].innerHTML = projectName;
+}
+
+function switchImageSource(student) {
+	var img = student.find("figure").find("img");
+	
+	// if class hovered is found
+	if (!img.hasClass("hovered")) {
+		img.addClass("hovered"); // add class
+		var src = img.attr("src").match(/[^\.]+/) + "_over.jpg"; // new src
+		img.attr("src", src); // change src
+	} else {
+		img.removeClass("hovered");
+		var src = img.attr("src").split("_over")[0] + ".jpg";
+		img.attr("src", src);
+	}
+	
+	
 }
 
 // switch/overlay all profile images with project thumbnails
