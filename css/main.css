@@ -58,7 +58,7 @@ textarea {
     padding: 0.2em 0;
 }
 
-
+.center { text-align: center; }
 
 
 
@@ -335,6 +335,7 @@ nav#historicNav a:active {
 	
 }
 
+
 /*
 	***
 	Student Colors
@@ -344,10 +345,10 @@ nav#historicNav a:active {
 #amanda a:link, #amanda a:visited { color: #ed135a; }
 #amanda a:hover, #amanda a:active { color: #222; }
 
-#michael a:link, #michael a:visited { color: #f67fc5; }
+#michael a:link, #michael a:visited { color: #0ba2ce; }
 #michael a:hover, #michael a:active { color: #222; }
 
-#chenyu a:link, #chenyu a:visited { color: #f67fc5; }
+#chenyu a:link, #chenyu a:visited { color: #000000; }
 #chenyu a:hover, #chenyu a:active { color: #222; }
 
 #nate a:link, #nate a:visited { color: #587373; }
@@ -356,7 +357,7 @@ nav#historicNav a:active {
 #alex a:link, #alex a:visited { color: #35c9d0; }
 #alex a:hover, #alex a:active { color: #222; }
 
-#katrina a:link, #katrina a:visited { color: #f67fc5; }
+#katrina a:link, #katrina a:visited { color: #f67fc5; } /* */
 #katrina a:hover, #katrina a:active { color: #222; }
 
 #daniel a:link, #daniel a:visited { color: #4FF1B8; }
@@ -365,13 +366,13 @@ nav#historicNav a:active {
 #winnie a:link, #winnie a:visited { color: #b11116; }
 #winnie a:hover, #winnie a:active { color: #222; }
 
-#wenjie a:link, #wenjie a:visited { color: #f67fc5; }
+#wenjie a:link, #wenjie a:visited { color: #f67fc5; }  /* */
 #wenjie a:hover, #wenjie a:active { color: #222; }
 
-#louis a:link, #louis a:visited { color: #e5004e; }
+#louis a:link, #louis a:visited { color: #e5004e; } 
 #louis a:hover, #louis a:active { color: #222; }
 
-#sally a:link, #sally a:visited { color: #f67fc5; }
+#sally a:link, #sally a:visited { color: #001aff; }
 #sally a:hover, #sally a:active { color: #222; }
 
 #shiva a:link, #shiva a:visited { color: #FF3131; }
@@ -380,8 +381,11 @@ nav#historicNav a:active {
 #iris a:link, #iris a:visited { color: #FF3131; }
 #iris a:hover, #iris a:active { color: #222; }
 
-#lolo a:link, #lolo a:visited { color: #f67fc5; }
+#lolo a:link, #lolo a:visited { color: #FBB03B; }
 #lolo a:hover, #lolo a:active { color: #222; }
+
+#abu a:link, #abu a:visited { color: #f6d90c; }
+#abu a:hover, #abu a:active { color: #222; }
 
 
 /*
