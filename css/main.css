@@ -126,17 +126,16 @@ h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
 */
 
 #historicNavContainer {
-	min-height: 30px;
 	background-color: #fff;
 }
 nav#historicNav {
-	font-size: 13px;
+	font-size: 12px;
 }
 nav#historicNav ul { list-style-type: none; margin: 0; padding: 0; min-height: 100%; }
 nav#historicNav ul li {
 	display: inline-block;
 	padding: 0;
-	margin: 0 15px 0 0;
+	margin: 3px 7px 3px 0;
 }
 
 nav#historicNav li.main { font-weight: 700; }
@@ -233,10 +232,14 @@ nav#historicNav a:active {
 	background: url(../img/close.svg) center center no-repeat;
 	cursor: pointer;
 	
-	-webkit-transition: opacity .2s;
-	transition: opacity .2s;
+	-webkit-transition: all .2s;
+	transition: all .2s;
 }
-.studentInfoOverlay .close:hover { opacity: .5; }
+.studentInfoOverlay .close:hover {
+	opacity: .5;
+	/*-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);*/
+}
 .studentInfo {
 	display: block;
 	width: 300px;
@@ -359,7 +362,7 @@ nav#historicNav a:active {
 #daniel a:link, #daniel a:visited { color: #4FF1B8; }
 #daniel a:hover, #daniel a:active { color: #222; }
 
-#winnie a:link, #winnie a:visited { color: #f67fc5; }
+#winnie a:link, #winnie a:visited { color: #b11116; }
 #winnie a:hover, #winnie a:active { color: #222; }
 
 #wenjie a:link, #wenjie a:visited { color: #f67fc5; }

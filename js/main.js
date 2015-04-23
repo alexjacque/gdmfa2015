@@ -34,7 +34,7 @@ $( document ).ready(function() {
 	$(".close").click(function(e) {
 		$("html").css("overflow","scroll");
 		$("body").removeClass("modal-open"); // remove class to resume scrolling
-		restoreNames(); // because on mobile names stay gone for whatever reason
+		restoreNames($(this).parent().parent()); // because on mobile names stay gone for whatever reason
 		
 		var scr = document.body.scrollTop; // get current distance of scroll from top 
 		$(this).parent().removeClass("isOpen"); // remove class from overlay
@@ -120,12 +120,16 @@ function switchImageSource(student) {
 		img.removeClass("hovered");
 		var src = img.attr("src").split("_over")[0] + ".jpg";
 		img.attr("src", src);
-	}
-	
-	
+	}	
 }
 
+
+
 // switch/overlay all profile images with project thumbnails
+
+function showProjectThumbnails(student) {
+	
+}
 
 // create array of all id -> imageURL pairs on initial load
 // replace all figure -> img srcs with other? images
