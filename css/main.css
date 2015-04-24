@@ -341,7 +341,7 @@ nav#historicNav a:active {
 	***
 */
 
-#amanda a:link, #amanda a:visited { color: #0099cc; }
+#amanda a:link, #amanda a:visited { color: #ed135a; }
 #amanda a:hover, #amanda a:active { color: #222; }
 
 #michael a:link, #michael a:visited { color: #0ba2ce; }
@@ -356,7 +356,7 @@ nav#historicNav a:active {
 #alex a:link, #alex a:visited { color: #35c9d0; }
 #alex a:hover, #alex a:active { color: #222; }
 
-#katrina a:link, #katrina a:visited { color: #f67fc5; } /* */
+#katrina a:link, #katrina a:visited { color: #FF0000; } /* */
 #katrina a:hover, #katrina a:active { color: #222; }
 
 #daniel a:link, #daniel a:visited { color: #4FF1B8; }
