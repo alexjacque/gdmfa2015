@@ -341,7 +341,7 @@ nav#historicNav a:active {
 	***
 */
 
-#amanda a:link, #amanda a:visited { color: #ed135a; }
+#amanda a:link, #amanda a:visited { color: #0099cc; }
 #amanda a:hover, #amanda a:active { color: #222; }
 
 #michael a:link, #michael a:visited { color: #0ba2ce; }
