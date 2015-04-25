@@ -4,7 +4,7 @@ $( document ).ready(function() {
 	
 	$(".student").hover(function(e) {
 		changeNameToProjectTitle($(this)); // change student name to project title
-		hideNames($(this)); // hide all other names
+		//hideNames($(this)); // hide all other names
 		switchImageSource($(this));
 		// show student thumbnails
 	}, function(e) {
@@ -90,7 +90,7 @@ function restoreNames(student) {
 	// get all .student>figure>figcaption elements
 	// set all to 1 opacity
 	
-	$(".student").find("figcaption").stop().animate({opacity: 1}, 200);
+	// $(".student").find("figcaption").stop().animate({opacity: 1}, 200);
 	
 	// if we're hovering off of a particular student
 	if (student) {
