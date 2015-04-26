@@ -42,6 +42,26 @@ $( document ).ready(function() {
 		document.body.scrollTop = scr; // scroll back to that position
 	});
 	
+	$(".prev").click(function(e) {
+		var foo = $(this).parent().parent().parent().prev(".student"); // get previous student element, if there is one
+		console.log(foo);
+		// get id of prev student element
+		$(this).parent().parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+		// update hash
+		// add isOpen to previous student overlay
+		console.log("prev student");
+	});
+	
+	$(".next").click(function(e) {
+		var foo = $(this).parent().parent().parent().next(".student"); // get next student element, if there is one
+		console.log(foo);
+		// get id of next student element
+		$(this).parent().parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+		// update hash
+		// add isOpen to next student overlay
+		console.log("next student");
+	});
+	
 });
 
 // function to enable direct linking to a students profile
@@ -90,7 +110,7 @@ function restoreNames(student) {
 	// get all .student>figure>figcaption elements
 	// set all to 1 opacity
 	
-	// $(".student").find("figcaption").stop().animate({opacity: 1}, 200);
+	$(".student").find("figcaption").stop().animate({opacity: 1}, 200);
 	
 	// if we're hovering off of a particular student
 	if (student) {
@@ -122,16 +142,3 @@ function switchImageSource(student) {
 		img.attr("src", src);
 	}	
 }
-
-
-
-// switch/overlay all profile images with project thumbnails
-
-function showProjectThumbnails(student) {
-	
-}
-
-// create array of all id -> imageURL pairs on initial load
-// replace all figure -> img srcs with other? images
-
-// on mouse out, restore img srcs from array of id -> imageURL pairs
