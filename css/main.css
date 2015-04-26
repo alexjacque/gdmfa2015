@@ -65,10 +65,18 @@ textarea {
 body {
 	background-color: #fafafa;
     font: 16px/26px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-rendering: optimizeLegibility; /* optional: for older browsers */
+	-webkit-font-variant-ligatures: common-ligatures; /* for iOS and Safari 6 */
+			font-variant-ligatures: common-ligatures; /* for up-to-date browsers, including IE10 and Opera 21 */
 	
 	box-sizing: border-box;
 	margin: 0;
+	padding: 0;
 	min-height: 100%;
+}
+
+@media and (max-device-width : 480px) {
+	body { text-rendering: optimizeSpeed; }
 }
 
 #cocoon { height: 100%; width: 100%; position: relative; }
@@ -86,9 +94,9 @@ a:link, a:visited {
 	text-decoration: none;
 	border-bottom: 1px solid rgba(0,0,0,1);
 	-webkit-transition: all .2s ease-in-out;
-	-moz-transition: all .2s ease-in-out;
-	-ms-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 }
 a:hover, a:active { text-decoration: none; border-bottom-color: rgba(0,0,0,0); }
 
@@ -121,8 +129,8 @@ a:hover, a:active { text-decoration: none; border-bottom-color: rgba(0,0,0,0); }
 	margin: 20px auto 30px auto;
 	font-style: italic;
 	color: #888;
-	font-size: 15px;
 }
+.intro p { font-size: 13px; line-height: 1.5em; }
 h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
 
 
@@ -191,7 +199,10 @@ nav#historicNav a:active {
 	color: #ccc;
 	font-size: 16px;
 	line-height: 16px;
-	transition: all .2s;
+	-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 }
 .student:hover figcaption { color: #222; }
 
@@ -214,10 +225,13 @@ nav#historicNav a:active {
 	background-color: #fafafa;
 	opacity: 0;
 	visibility: hidden;
-	z-index: 1000;
+	z-index: 900;
+	box-sizing: border-box;
 	
 	-webkit-transition: all .2s ease-in-out;
-	transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 }
 .studentInfoOverlay.isOpen {
 	top: 0;
@@ -228,7 +242,9 @@ nav#historicNav a:active {
 	visibility: visible;
 	
 	-webkit-transition: all .4s ease-in-out;
-	transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+		-ms-transition: all .4s ease-in-out;
+			transition: all .4s ease-in-out;
 }
 
 .studentInfoOverlay .close {
@@ -241,15 +257,55 @@ nav#historicNav a:active {
 	text-indent: -10000px;
 	background: url(../img/close.svg) center center no-repeat;
 	cursor: pointer;
+	z-index: 1000;
 	
-	-webkit-transition: all .2s;
-	transition: all .2s;
+	-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 }
 .studentInfoOverlay .close:hover {
 	opacity: .5;
 	/*-webkit-transform: rotate(90deg);
 	transform: rotate(90deg);*/
 }
+
+.stuNav {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100vw;
+	box-sizing: border-box;
+	background-color: #000;
+	color: #fff;
+	border-top: 1px solid #ccc;
+	z-index: 950;
+}
+.prev, .next {
+	display: block;
+	width: 50vw;
+	padding: 20px 0 20px 0;
+	text-align: center;
+	box-sizing: border-box;
+	border: 0;
+	cursor: pointer;
+	font-size: 32px;
+	line-height: 12px;
+	
+	-webkit-transition: all .2s ease-in-out;
+	   -moz-transition: all .2s ease-in-out;
+		-ms-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+}
+.prev { float: left; }
+.next { float: right; }
+
+.prev:hover, .next:hover {
+	background-color: #fff;
+	color: #000;
+}
+
 .studentInfo {
 	display: block;
 	width: 300px;
@@ -311,7 +367,10 @@ nav#historicNav a:active {
 		color: #ccc;
 		font-size: 13px;
 		line-height: 16px;
-		transition: all .2s;
+		-webkit-transition: all .2s ease-in-out;
+		   -moz-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
 	}
 	.studentInfo {
 		width: 450px;
@@ -330,6 +389,37 @@ nav#historicNav a:active {
 	.studentInfoOverlay.isOpen .studentInfo {
 		opacity: 1;
 		margin-top: 100px;
+	}
+	.stuNav {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
+		background-color: transparent;
+		color: #000;
+		border: none;
+	}
+	.prev, .next {
+		display: block;
+		width: auto;
+		height: auto;
+		padding: 0;
+		margin-top: 50vh;
+		text-align: center;
+		border: 0;
+		cursor: pointer;
+		font-size: 32px;
+		line-height: 12px;
+	
+		-webkit-transition: all .2s ease-in-out;
+		   -moz-transition: all .2s ease-in-out;
+			-ms-transition: all .2s ease-in-out;
+				transition: all .2s ease-in-out;
+	}
+	.prev { float: left; margin-left: 20px; }
+	.next { float: right; margin-right: 20px; }
+	.prev:hover, .next:hover {
+		background-color: transparent;
+		color: #999;
 	}
 	.studentAvatar {
 		width: 150px;
