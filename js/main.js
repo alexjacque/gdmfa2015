@@ -32,24 +32,38 @@ $( document ).ready(function() {
 	});
 	
 	$(".close").click(function(e) {
-		$("html").css("overflow","scroll");
-		$("body").removeClass("modal-open"); // remove class to resume scrolling
-		restoreNames($(this).parent().parent()); // because on mobile names stay gone for whatever reason
-		
-		var scr = document.body.scrollTop; // get current distance of scroll from top 
-		$(this).parent().removeClass("isOpen"); // remove class from overlay
-		$(this).parent().removeClass("noFade");
-		removeHash();
-		document.body.scrollTop = scr; // scroll back to that position
+		var student = $(this).parent().parent(); // get current student element
+		closeModal( student );
 	});
 	
 	$(".prev").click(function(e) {
-		goPrevious($(this));
+		var student = $(this).parent().parent().parent(); // get current student element
+		goPrevious( student ); // go to the prev student
 	});
 	
 	$(".next").click(function(e) {
-		goNext($(this));
+		var student = $(this).parent().parent().parent(); // get current student element
+		goNext( student ); // go to the next student
 	});
+	
+	// key navigation
+	$("body").keydown(function(e) {
+		var hash = window.location.hash; // get hash (is an overlay open?)
+		if (hash.length > 1) { // if hash found
+			var curStudent = $(hash);// get student elemnent with id from hash
+			
+			if (e.which == 27) { // escape
+				closeModal(curStudent);
+			}
+			else if (e.which == 37) { // left     
+				goPrevious(curStudent);
+			}
+			else if (e.which == 39) { // right     
+				goNext(curStudent);
+			}
+			
+		}
+    });
 	
 });
 
@@ -109,30 +123,72 @@ function restoreNames(student) {
 	
 }
 
-// navigate to previous student, show detail overlay
-function goPrevious(link) {
-	var prevStu = link.parent().parent().parent().prev(".student"); // get previous student element, if there is one
-	var prevStuID = prevStu.attr('id'); // get id of prev student element
-	console.log("previous student: " + prevStuID);
+function closeModal(student) {
+	$("html").css("overflow","scroll");
+	$("body").removeClass("modal-open"); // remove class to resume scrolling
+	restoreNames(student); // because on mobile names stay gone for whatever reason
 	
-	link.parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
-	// update hash
-	// add isOpen to previous student overlay
-	var node = $('#' + prevStuID);
-	node.find(".studentInfoOverlay").addClass("isOpen noFade");
+	var scr = document.body.scrollTop; // get current distance of scroll from top 
+	student.find(".studentInfoOverlay").removeClass("isOpen"); // remove class from overlay
+	student.find(".studentInfoOverlay").removeClass("noFade");
+	removeHash();
+	document.body.scrollTop = scr; // scroll back to that position
+}
+
+// navigate to previous student, show detail overlay
+function goPrevious(student) {
+	var prevStudent = student.prev(".student"); // get previous student element, if there is one
+
+	if (prevStudent.attr('id') !== undefined) { // if a prev student exists
+		var id = prevStudent.attr('id'); // get id of prev student element
+		// console.log("previous student: " + id);
+	
+		student.find(".studentInfoOverlay").removeClass("isOpen"); // remove isOpen from current student overlay
+	
+		var node = $('#' + id); // node we'll be acting on
+		// update hash
+		if (node.length) { // if the node actually exists
+			node.attr('id',''); // remove the id temporarily to prevent anchor jumping
+		}
+		document.location.hash = id; // set our document hash
+		if (node.length) { // again, if the node actually exists
+			node.attr('id',id); // add our hash id back to the original node
+		}
+		node.find(".studentInfoOverlay").addClass("isOpen noFade"); // add isOpen & noFade to previous student overlay
+	
+		//var loc = window.location;
+	    //window.history.pushState("", document.title, document.location.hash);
+	} else {
+		closeModal(student); // close overlay
+	}
 }
 
 // navigation to next student, show detail overlay
-function goNext(link) {
-	var nextStu = link.parent().parent().parent().next(".student"); // get next student element, if there is one
-	var nextStuID = nextStu.attr('id'); // get id of next student element
-	console.log("next student: " + nextStuID);
+function goNext(student) {
+	var nextStudent = student.next(".student"); // get next student element, if there is one
 	
-	link.parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
-	// update hash
-	// add isOpen to next student overlay
-	var node = $('#' + nextStuID);
-	node.find(".studentInfoOverlay").addClass("isOpen noFade");
+	if (nextStudent.attr('id') !== undefined) { // if a next student exists
+		var id = nextStudent.attr('id'); // get id of next student element
+		// console.log("next student: " + id);
+	
+		student.find(".studentInfoOverlay").removeClass("isOpen"); // remove isOpen from current student overlay
+	
+		var node = $('#' + id); // node we'll be acting on
+		// update hash
+		if (node.length) { // if the node actually exists
+			node.attr('id',''); // remove the id temporarily to prevent anchor jumping
+		}
+		document.location.hash = id; // set our document hash
+		node.find(".studentInfoOverlay").addClass("isOpen noFade"); // add isOpen & noFade to next student overlay
+		if (node.length) { // again, if the node actually exists
+			node.attr('id',id); // add our hash id back to the original node
+		}
+	
+		//var loc = window.location;
+	    //window.history.pushState("", document.title, document.location.hash);
+	} else {
+		closeModal(student); // close overlay
+	}
 }
 
 function changeNameToProjectTitle(student) {
