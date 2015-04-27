@@ -44,27 +44,11 @@ $( document ).ready(function() {
 	});
 	
 	$(".prev").click(function(e) {
-		var prevStu = $(this).parent().parent().parent().prev(".student"); // get previous student element, if there is one
-		var prevStuID = prevStu.attr('id'); // get id of prev student element
-		console.log("previous student: " + prevStuID);
-		
-		$(this).parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
-		// update hash
-		// add isOpen to previous student overlay
-		var node = $('#' + prevStuID);
-		node.find(".studentInfoOverlay").addClass("isOpen noFade");
+		goPrevious($(this));
 	});
 	
 	$(".next").click(function(e) {
-		var nextStu = $(this).parent().parent().parent().next(".student"); // get next student element, if there is one
-		var nextStuID = nextStu.attr('id'); // get id of next student element
-		console.log("next student: " + nextStuID);
-		
-		$(this).parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
-		// update hash
-		// add isOpen to next student overlay
-		var node = $('#' + nextStuID);
-		node.find(".studentInfoOverlay").addClass("isOpen noFade");
+		goNext($(this));
 	});
 	
 });
@@ -123,6 +107,32 @@ function restoreNames(student) {
 		student.find('figcaption')[0].innerHTML = studentName;
 	}
 	
+}
+
+// navigate to previous student, show detail overlay
+function goPrevious(link) {
+	var prevStu = link.parent().parent().parent().prev(".student"); // get previous student element, if there is one
+	var prevStuID = prevStu.attr('id'); // get id of prev student element
+	console.log("previous student: " + prevStuID);
+	
+	link.parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+	// update hash
+	// add isOpen to previous student overlay
+	var node = $('#' + prevStuID);
+	node.find(".studentInfoOverlay").addClass("isOpen noFade");
+}
+
+// navigation to next student, show detail overlay
+function goNext(link) {
+	var nextStu = link.parent().parent().parent().next(".student"); // get next student element, if there is one
+	var nextStuID = nextStu.attr('id'); // get id of next student element
+	console.log("next student: " + nextStuID);
+	
+	link.parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+	// update hash
+	// add isOpen to next student overlay
+	var node = $('#' + nextStuID);
+	node.find(".studentInfoOverlay").addClass("isOpen noFade");
 }
 
 function changeNameToProjectTitle(student) {

@@ -301,10 +301,10 @@ nav#historicNav a:active {
 	font-size: 32px;
 	line-height: 12px;
 	
-	-webkit-transition: all .2s ease-in-out;
-	   -moz-transition: all .2s ease-in-out;
-		-ms-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;
+	-webkit-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+	   -moz-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+		-ms-transition: background-color .2s ease-in-out, color .2s ease-in-out;
+			transition: background-color .2s ease-in-out, color .2s ease-in-out;
 }
 .prev { float: left; }
 .next { float: right; }
@@ -328,10 +328,10 @@ nav#historicNav a:active {
 	transition-delay: .5s;
 }
 .noFade .studentInfo {
-	-webkit-transition: all 0 ease-in-out;
-	   -moz-transition: all 0 ease-in-out;
-		-ms-transition: all 0 ease-in-out;
-			transition: all 0 ease-in-out;
+	-webkit-transition: all 0;
+	   -moz-transition: all 0;
+		-ms-transition: all 0;
+			transition: all 0;
 }
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
@@ -423,10 +423,10 @@ nav#historicNav a:active {
 		font-size: 32px;
 		line-height: 12px;
 	
-		-webkit-transition: all .2s ease-in-out;
-		   -moz-transition: all .2s ease-in-out;
-			-ms-transition: all .2s ease-in-out;
-				transition: all .2s ease-in-out;
+		-webkit-transition: color .2s ease-in-out;
+		   -moz-transition: color .2s ease-in-out;
+			-ms-transition: color .2s ease-in-out;
+				transition: color .2s ease-in-out;
 	}
 	.prev { float: left; margin-left: 20px; }
 	.next { float: right; margin-right: 20px; }
