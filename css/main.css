@@ -233,6 +233,7 @@ nav#historicNav a:active {
 		-ms-transition: all .2s ease-in-out;
 			transition: all .2s ease-in-out;
 }
+
 .studentInfoOverlay.isOpen {
 	top: 0;
 	right: 0;
@@ -245,6 +246,13 @@ nav#historicNav a:active {
 	   -moz-transition: all .4s ease-in-out;
 		-ms-transition: all .4s ease-in-out;
 			transition: all .4s ease-in-out;
+}
+
+.studentInfoOverlay.isOpen.noFade {
+	-webkit-transition: all 0 ease-in-out;
+	   -moz-transition: all 0 ease-in-out;
+		-ms-transition: all 0 ease-in-out;
+			transition: all 0 ease-in-out;
 }
 
 .studentInfoOverlay .close {
@@ -318,6 +326,12 @@ nav#historicNav a:active {
 	-webkit-transition-delay: .5s; /* Chrome, Safari, Opera */
 	transition: opacity .4s, margin .4s;
 	transition-delay: .5s;
+}
+.noFade .studentInfo {
+	-webkit-transition: all 0 ease-in-out;
+	   -moz-transition: all 0 ease-in-out;
+		-ms-transition: all 0 ease-in-out;
+			transition: all 0 ease-in-out;
 }
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
@@ -516,6 +530,7 @@ nav#historicNav a:active {
 #shiva .bg { background-image: url('../img/bg/shiva.jpg'); }
 #iris .bg { background-image: url('../img/bg/iris.jpg'); }
 #lolo .bg { background-image: url('../img/bg/lolo.jpg'); }
+#abu .bg { background-image: url('../img/bg/abu.jpg'); }
 
 
 /* ==========================================================================
