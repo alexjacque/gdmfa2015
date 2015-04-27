@@ -38,28 +38,33 @@ $( document ).ready(function() {
 		
 		var scr = document.body.scrollTop; // get current distance of scroll from top 
 		$(this).parent().removeClass("isOpen"); // remove class from overlay
+		$(this).parent().removeClass("noFade");
 		removeHash();
 		document.body.scrollTop = scr; // scroll back to that position
 	});
 	
 	$(".prev").click(function(e) {
-		var foo = $(this).parent().parent().parent().prev(".student"); // get previous student element, if there is one
-		console.log(foo);
-		// get id of prev student element
-		$(this).parent().parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+		var prevStu = $(this).parent().parent().parent().prev(".student"); // get previous student element, if there is one
+		var prevStuID = prevStu.attr('id'); // get id of prev student element
+		console.log("previous student: " + prevStuID);
+		
+		$(this).parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
 		// update hash
 		// add isOpen to previous student overlay
-		console.log("prev student");
+		var node = $('#' + prevStuID);
+		node.find(".studentInfoOverlay").addClass("isOpen noFade");
 	});
 	
 	$(".next").click(function(e) {
-		var foo = $(this).parent().parent().parent().next(".student"); // get next student element, if there is one
-		console.log(foo);
-		// get id of next student element
-		$(this).parent().parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
+		var nextStu = $(this).parent().parent().parent().next(".student"); // get next student element, if there is one
+		var nextStuID = nextStu.attr('id'); // get id of next student element
+		console.log("next student: " + nextStuID);
+		
+		$(this).parent().parent().removeClass("isOpen"); // remove isOpen from current student overlay
 		// update hash
 		// add isOpen to next student overlay
-		console.log("next student");
+		var node = $('#' + nextStuID);
+		node.find(".studentInfoOverlay").addClass("isOpen noFade");
 	});
 	
 });
