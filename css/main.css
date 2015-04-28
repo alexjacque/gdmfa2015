@@ -60,7 +60,7 @@ textarea {
 
 .center { text-align: center; }
 
-
+html, body { position: relative; }
 
 body {
 	background-color: #fafafa;
@@ -227,6 +227,7 @@ nav#historicNav a:active {
 	visibility: hidden;
 	z-index: 900;
 	box-sizing: border-box;
+	padding-bottom: 75px;
 	
 	-webkit-transition: all .2s ease-in-out;
 	   -moz-transition: all .2s ease-in-out;
@@ -249,10 +250,10 @@ nav#historicNav a:active {
 }
 
 .studentInfoOverlay.isOpen.noFade {
-	-webkit-transition: all 0 ease-in-out;
-	   -moz-transition: all 0 ease-in-out;
-		-ms-transition: all 0 ease-in-out;
-			transition: all 0 ease-in-out;
+	-webkit-transition: all 0s ease-in-out;
+	   -moz-transition: all 0s ease-in-out;
+		-ms-transition: all 0s ease-in-out;
+			transition: all 0s ease-in-out;
 }
 
 .studentInfoOverlay .close {
@@ -328,10 +329,10 @@ nav#historicNav a:active {
 	transition-delay: .5s;
 }
 .noFade .studentInfo {
-	-webkit-transition: all 0;
-	   -moz-transition: all 0;
-		-ms-transition: all 0;
-			transition: all 0;
+	-webkit-transition: all 0s;
+	   -moz-transition: all 0s;
+		-ms-transition: all 0s;
+			transition: all 0s;
 }
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
@@ -397,9 +398,10 @@ nav#historicNav a:active {
 		margin: 0 10px 0px 10px;
 	}
 	.studentInfo {
-		width: 600px;
+		width: 550px;
 		margin-top: 107px;
 	}
+	.studentInfoOverlay { padding-bottom: 25px; }
 	.studentInfoOverlay.isOpen .studentInfo {
 		opacity: 1;
 		margin-top: 100px;
@@ -443,7 +445,9 @@ nav#historicNav a:active {
 }
 
 @media only screen and (min-width: 1140px) {
-	
+	.studentInfo {
+		width: 600px;
+	}
 }
 
 
