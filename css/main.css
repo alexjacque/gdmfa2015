@@ -126,7 +126,7 @@ a:hover, a:active { text-decoration: none; border-bottom-color: rgba(0,0,0,0); }
 }
 
 .intro { 
-	margin: 20px auto 30px auto;
+	margin: 10px auto 30px auto;
 	font-style: italic;
 	color: #888;
 }
@@ -141,7 +141,8 @@ h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
 */
 
 #historicNavContainer {
-	background-color: #fff;
+	background-color: #transparent;
+	display: none;
 }
 nav#historicNav {
 	font-size: 12px;
@@ -157,15 +158,18 @@ nav#historicNav li.main { font-weight: 700; }
 
 nav#historicNav a:link,
 nav#historicNav a:visited {
-	color: #ccc;
-	border-bottom-color: rgba(204,204,204,1);
+	color: #888;
+	border-bottom-color: rgba(204,204,204,0.75);
 }
 nav#historicNav a:hover,
 nav#historicNav a:active {
-	color: #888;
-	border-bottom-color: rgba(204,204,204,0);
+	color: #000;
+	border-bottom-color: rgba(0,0,0,0);
 }
 
+@media only screen and (min-width: 430px) {	
+	#historicNavContainer { display: block; }
+}
 
 /*
 	***
