@@ -141,8 +141,16 @@ h1.title { font-weight: 700; font-style: italic; margin-bottom: 10px; }
 */
 
 #historicNavContainer {
-	background-color: #transparent;
+	background-color: transparent;
 	display: none;
+	opacity: 0.5;
+	-webkit-transition: opacity .2s ease-in-out;
+	   -moz-transition: opacity .2s ease-in-out;
+		-ms-transition: opacity .2s ease-in-out;
+			transition: opacity .2s ease-in-out;
+}
+#historicNavContainer:hover {
+	opacity: 1;
 }
 nav#historicNav {
 	font-size: 12px;
@@ -333,10 +341,10 @@ nav#historicNav a:active {
 	transition-delay: .5s;
 }
 .noFade .studentInfo {
-	-webkit-transition: all 0s;
-	   -moz-transition: all 0s;
-		-ms-transition: all 0s;
-			transition: all 0s;
+	-webkit-transition: all 0s ease-in-out, opacity .4s ease-in-out;
+	   -moz-transition: all 0s ease-in-out, opacity .4s ease-in-out;
+		-ms-transition: all 0s ease-in-out, opacity .4s ease-in-out;
+			transition: all 0s ease-in-out, opacity .4s ease-in-out;
 }
 .studentInfoOverlay.isOpen .studentInfo {
 	opacity: 1;
