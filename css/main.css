@@ -184,6 +184,9 @@ nav#historicNav a:active {
 	Students Overview
 	***
 */
+#students {
+	margin-bottom: 30px;
+}
 
 .student {
 	display: block;
@@ -350,6 +353,9 @@ nav#historicNav a:active {
 	opacity: 1;
 	margin-top: 50px;
 }
+.studentInfoOverlay.isOpen.noFade .studentInfo {
+	margin-top: 57px;
+}
 
 .studentAvatar {
 	width: 100px;
@@ -417,6 +423,9 @@ nav#historicNav a:active {
 	.studentInfoOverlay.isOpen .studentInfo {
 		opacity: 1;
 		margin-top: 100px;
+	}
+	.studentInfoOverlay.isOpen.noFade .studentInfo {
+		margin-top: 107px;
 	}
 	.stuNav {
 		position: relative;
