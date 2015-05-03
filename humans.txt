@@ -3,7 +3,7 @@
 
 # TEAM
 
-    Alex Jacque -- Designer / Developer -- @alexjacque
+    Alex Jacque -- Designer / Developer -- @ajacque
 
 # THANKS
 
@@ -12,9 +12,9 @@
 	
 	Amanda Buck
 	Daniel Khang
-	Haoqian "Lolo" Zhang
 	Iris Sprague
 	Katrina Keane
+	Lolo Zhang
 	Michael Bonfiglio
 	Nate Gulledge
 	Sally Maier
@@ -22,7 +22,7 @@
 	Wenjie Lu
 	Winnie Kuo
 	Yu Chen
-	Yushi "Louis" Luo
+	Yushi Luo
 
 # TECHNOLOGY COLOPHON
 
